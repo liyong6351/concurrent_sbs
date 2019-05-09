@@ -86,6 +86,7 @@ class Point {
 ## StampedLock使用注意事项
 
 StampedLock的功能仅仅是ReadWriteLock的子集。在使用的时候需要注意以下事项:
+
 1. StampedLock没有reen的标识，那么他们不支持可重入
 2. Stamped的悲观读锁和写锁都不支持条件变量
 3. 使用StampedLock千万不要调用中断操作，否则可能导致CPU飙升到100%。如果需要支持中断操作，需要使用悲观读锁和写锁
